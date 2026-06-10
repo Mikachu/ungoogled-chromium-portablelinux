@@ -1,0 +1,2 @@
+#!/bin/sh
+git update-index --add --cacheinfo 160000,$1,ungoogled-chromium
