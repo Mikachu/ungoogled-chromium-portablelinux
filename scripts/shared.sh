@@ -105,6 +105,32 @@ fix_tool_downloading() {
         "${_src_dir}/tools/rust/build_rust.py"
 }
 
+# fetch the Go toolchain Dawn/Tint's codegen needs but that gclient
+# would normally provide via CIPD (infra/3pp/tools/go/linux-amd64)
+fetch_dawn_go_toolchain() {
+    local go_version="1.25.0"
+    local go_root="${_src_dir}/third_party/dawn/tools/golang/linux-amd64"
+    local go_arch="amd64"
+
+    if [ "$_host_arch" = "arm64" ]; then
+        go_arch="arm64"
+    fi
+
+    if [ -x "${go_root}/bin/go" ]; then
+        echo "Dawn Go toolchain already present, skipping download"
+        return 0
+    fi
+
+    local tarball="${_dl_cache}/go${go_version}.linux-${go_arch}.tar.gz"
+    if [ ! -f "${tarball}" ]; then
+        curl -fsSL -o "${tarball}" \
+            "https://go.dev/dl/go${go_version}.linux-${go_arch}.tar.gz"
+    fi
+
+    mkdir -p "${go_root}"
+    tar -xzf "${tarball}" --strip-components=1 -C "${go_root}"
+}
+
 setup_toolchain() {
     # Chromium currently has no non-x86 llvm/rust builds on
     # Linux, so we have to build it ourselves.
