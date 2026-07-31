@@ -142,6 +142,9 @@ setup_toolchain() {
 	mkdir -p "${_src_dir}/buildtools/linux64-format"
 	ln -sf "$(which clang-format)" "${_src_dir}/buildtools/linux64-format/clang-format"
 
+    rm -rf "${_src_dir}/third_party/devtools-frontend/src/node_modules/esbuild/"
+    ln -s /usr/lib/node_modules/esbuild/ "${_src_dir}/third_party/devtools-frontend/src/node_modules/esbuild"
+
     local clang_bin="${_src_dir}/third_party/llvm-build/Release+Asserts/bin"
     export CC="${clang_bin}/clang"
     export CXX="${clang_bin}/clang++"
