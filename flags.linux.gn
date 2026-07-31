@@ -1,4 +1,8 @@
 is_official_build=true
+dcheck_always_on=false
+dcheck_is_configurable=false
+enable_pseudolocales=false
+enable_widevine=false
 symbol_level=0
 disable_fieldtrial_testing_config=true
 blink_enable_generated_code_formatting=false
@@ -9,6 +13,7 @@ fatal_linker_warnings=false
 rtc_use_pipewire=true
 is_clang=true
 is_debug=false
+use_thin_lto=true
 use_kerberos=false
 use_sysroot=true
 use_vaapi=true
