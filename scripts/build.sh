@@ -18,7 +18,6 @@ apply_patches
 apply_domsub
 write_gn_args
 fix_tool_downloading
-fetch_dawn_go_toolchain
 setup_toolchain
 gn_gen
 maybe_build
