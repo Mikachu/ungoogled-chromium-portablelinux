@@ -1,4 +1,3 @@
 ungoogled-chromium/portablelinux/drop-nodejs-version-check.patch
 ungoogled-chromium/portablelinux/use-oauth2-client-switches-as-default.patch
-ungoogled-chromium/portablelinux/fix-compiling-on-arm64.patch
-ungoogled-chromium/portablelinux/fix-nongit-dep-on-histogram-xml.patch
+ungoogled-chromium/portablelinux/fix-rust-crap.patch

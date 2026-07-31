@@ -146,6 +146,8 @@ setup_toolchain() {
     export AR="${clang_bin}/llvm-ar"
     export NM="${clang_bin}/llvm-nm"
     export LLVM_BIN="${clang_bin}"
+    mkdir -p "${_src_dir}/buildtools/linux64-format"
+    ln -sf "$(which clang-format)" "${_src_dir}/buildtools/linux64-format/clang-format"    
 
     local resource_dir
     resource_dir="$(${CC%% *} --print-resource-dir)"
