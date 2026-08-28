@@ -28,7 +28,7 @@ RUN apt-get -y install bison debhelper desktop-file-utils flex golang gperf gset
   uuid-dev valgrind wdiff x11-apps xcb-proto xfonts-base xvfb xz-utils yasm clang-format
 
 # install additional packages needed when cloning the chromium repo (and sudo and vim for convenience)
-RUN apt-get -y install git python3-httplib2 python3-pyparsing python3-six rsync sudo vim
+RUN apt-get -y install git python3-httplib2 python3-pyparsing python3-six rsync sudo vim clang-format
 
 # create builder user
 RUN groupadd -g 1000 builder && useradd -d /home/builder -g 1000 -u 1000 -m builder

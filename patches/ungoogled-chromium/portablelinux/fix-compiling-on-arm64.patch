@@ -20,10 +20,11 @@
                   'scripts'))
  
  from build import (AddCMakeToPath, AddZlibToPath, CheckoutGitRepo, CopyFile,
--                   DownloadDebianSysroot, GetLibXml2Dirs, GitCherryPick,
-+                   DownloadDebianSysroot, GetLibXml2Dirs, GetHostSysrootPlatform,
-                    GitRevert, LLVM_DIR, IsGitAncestorToHead,
-                    LLVM_BUILD_TOOLS_DIR, RunCommand)
+                   DownloadDebianSysroot, FetchUrl, GetLibXml2Dirs,
+-                  GitCherryPick, GitRevert, LLVM_DIR, IsGitAncestorToHead,
++                  GetHostSysrootPlatform, GitRevert, LLVM_DIR, IsGitAncestorToHead,
+                   LLVM_BUILD_TOOLS_DIR, RunCommand,
+                   DEFAULT_MACOSX_DEPLOYMENT_TARGET, GetLatestCommit)
  from update import (CHROMIUM_DIR, DownloadAndUnpack, EnsureDirExists,
 @@ -161,8 +161,8 @@ def AddOpenSSLToEnv():
          ssl_url = (f'{CIPD_DOWNLOAD_URL}/{OPENSSL_CIPD_WIN_AMD_PATH}'

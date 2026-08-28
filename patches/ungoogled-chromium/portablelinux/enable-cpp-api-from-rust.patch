@@ -1,5 +1,3 @@
-The CBOR parser has been updated to use crubit in [8118328]. This change requires the build to be made with chromium's rust toolchain and prebuilts.
-
 --- a/components/cbor/BUILD.gn
 +++ b/components/cbor/BUILD.gn
 @@ -12,7 +12,7 @@
