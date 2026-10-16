@@ -1,4 +1,4 @@
-name: Building Linux AppImage for ungoogled-chromium
+name: Internal steps for building Linux tarball for ungoogled-chromium
 
 defaults:
   run:

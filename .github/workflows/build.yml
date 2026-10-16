@@ -1,4 +1,4 @@
-name: Build Linux AppImage for ungoogled-chromium
+name: Build Linux tarball for ungoogled-chromium
 on:
   push:
     tags:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    name: Build ungoogled-chromium binaries and AppImage
+    name: Build ungoogled-chromium binaries
     strategy:
       matrix:
         arch: [x86_64]

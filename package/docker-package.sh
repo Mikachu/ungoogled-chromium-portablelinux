@@ -15,6 +15,5 @@ _user_uidgid="$(id -u):$(id -g)"
 
 cd "${_root_dir}" && docker run --rm -i \
     -u "${_user_uidgid}" \
-    -e APPIMAGE_EXTRACT_AND_RUN=1 \
     -v "${_root_dir}:/repo" \
     "${_image}" bash "/repo/scripts/package.sh"
