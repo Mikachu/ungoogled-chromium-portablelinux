@@ -144,6 +144,8 @@ setup_toolchain() {
 
     rm -rf "${_src_dir}/third_party/devtools-frontend/src/node_modules/esbuild/"
     ln -s /usr/lib/node_modules/esbuild/ "${_src_dir}/third_party/devtools-frontend/src/node_modules/esbuild"
+    mkdir -p "${_src_dir}/third_party/typescript/linux-amd64/src/lib"
+	ln -sf "$(which tsc)" "${_src_dir}/third_party/typescript/linux-amd64/src/lib/tsc"
 
     local clang_bin="${_src_dir}/third_party/llvm-build/Release+Asserts/bin"
     export CC="${clang_bin}/clang"
