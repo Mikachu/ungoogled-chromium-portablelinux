@@ -1,4 +1,3 @@
-ungoogled-chromium/portablelinux/157-gn.patch
 ungoogled-chromium/portablelinux/use-oauth2-client-switches-as-default.patch
 ungoogled-chromium/portablelinux/chromium-138-drop-nodejs-version-check.patch
 ungoogled-chromium/portablelinux/chromium-153-revert-hermetic-python.patch
