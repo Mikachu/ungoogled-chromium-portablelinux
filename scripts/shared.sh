@@ -68,7 +68,7 @@ fetch_sources() {
 
 apply_patches() {
     if [ ! -f "${_src_dir}/.patched.stamp" ]; then
-        "${_main_repo}/utils/prune_binaries.py" "${_src_dir}" "${_main_repo}/pruning.list"
+        "${_main_repo}/utils/prune_binaries.py" "${_src_dir}" "${_main_repo}/pruning.list" || true
         "${_main_repo}/utils/patches.py" apply "${_src_dir}" "${_main_repo}/patches" "${_root}/patches"
         touch "${_src_dir}/.patched.stamp"
     fi
